@@ -13,6 +13,8 @@ class DownloadingSong(db.Model, IDto):
     music_albom_id_albom = db.Column(db.Integer, db.ForeignKey('music.albom_id_albom'))
 
     music = db.relationship("Music", backref="downloading_song")
+    music = db.relationship('Music', foreign_keys=[music_id])
+    music = db.relationship('Music', foreign_keys=[music_albom_id_albom])
 
     def __repr__(self) -> str:
         return f"DownloadingSong(id_downloading_song={self.id_downloading_song}, " \

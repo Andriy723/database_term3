@@ -16,6 +16,9 @@ class Albom(db.Model, IDto):
 
     creator = db.relationship("Creator", backref="albom")
     music_labels = db.relationship("MusicLabels", backref="albom")
+    music_labels = db.relationship('MusicLabels', foreign_keys=[music_labels_id_music_labels])
+    music_labels = db.relationship('MusicLabels', foreign_keys=[music_labels_creator_creator_id])
+    creator = db.relationship('Creator', foreign_keys=[creator_creator_id])
 
     def __repr__(self) -> str:
         return f"Albom(id_albom={self.id_albom}, songs_num={self.songs_num}, name={self.name}, " \

@@ -15,6 +15,8 @@ class PersonProfile(db.Model, IDto):
     follower_creator_creator_id = db.Column(db.Integer, db.ForeignKey('follower.creator_creator_id'))
 
     follower = db.relationship("Follower", backref="person_profile")
+    follower = db.relationship('Follower', foreign_keys=[follower_id_follower])
+    follower = db.relationship('Follower', foreign_keys=[follower_creator_creator_id])
 
     def __repr__(self) -> str:
         return f"PersonProfile(id_person_profile={self.id_person_profile}, first_name={self.first_name}, " \

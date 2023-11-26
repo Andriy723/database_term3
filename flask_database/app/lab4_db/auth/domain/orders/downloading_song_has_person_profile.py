@@ -7,11 +7,11 @@ from flask_database.app.lab4_db.auth.domain.i_dto import IDto
 class DownloadingSongHasPersonProfile(db.Model, IDto):
     __tablename__ = "downloading_song_has_person_profile"
 
-    id = db.Column(db.Integer, primary_key=True)
-    downloading_song_id_downloading_song = db.Column(db.Integer, db.ForeignKey('downloading_song.id_downloading_song')
-                                                    )
-    downloading_song_music_id = db.Column(db.Integer, db.ForeignKey('downloading_song.music_id')
-                                          )
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    downloading_song_id_downloading_song = db.Column(
+        db.Integer, db.ForeignKey('downloading_song.id_downloading_song'))
+    downloading_song_music_id = db.Column(
+        db.Integer, db.ForeignKey('downloading_song.music_id'))
     downloading_song_music_albom_id_albom = db.Column(
         db.Integer, db.ForeignKey('downloading_song.music_albom_id_albom'))
     person_profile_id_person_profile = db.Column(
@@ -23,6 +23,12 @@ class DownloadingSongHasPersonProfile(db.Model, IDto):
 
     downloading_song = db.relationship("DownloadingSong", backref="downloading_song_has_person_profile")
     person_profile = db.relationship("PersonProfile", backref="downloading_song_has_person_profile")
+    downloading_song = db.relationship('DownloadingSong', foreign_keys=[downloading_song_id_downloading_song])
+    downloading_song = db.relationship('DownloadingSong', foreign_keys=[downloading_song_music_id])
+    downloading_song = db.relationship('DownloadingSong', foreign_keys=[downloading_song_music_albom_id_albom])
+    person_profile = db.relationship('PersonProfile', foreign_keys=[person_profile_id_person_profile])
+    person_profile = db.relationship('PersonProfile', foreign_keys=[person_profile_follower_id_follower])
+    person_profile = db.relationship('PersonProfile', foreign_keys=[person_profile_follower_creator_creator_id])
 
     def __repr__(self) -> str:
         return f"DownloadingSongHasPersonProfile(id=" \
