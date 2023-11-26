@@ -1,0 +1,11 @@
+flask~=2.3.3
+waitress~=2.1.2
+flask-sqlalchemy
+mysqlclient
+sqlalchemy-utils
+jinja2
+jsonify
+flask-restx
+SQLAlchemy~=2.0.23
+setuptools~=65.5.1
+PyYAML~=6.0.1
