@@ -106,19 +106,45 @@ INSERT INTO iot_db.person_profile (id_person_profile, first_name, last_name, bir
 (9, 's', 'ss', '04-04-2004', 9, 9),
 (10, 'd', 'dd', '03-03-2003', 10, 10);
 
-INSERT INTO iot_db.country_has_music (country_country_id, music_id, music_albom_id_albom, price, price_curency) VALUES
-(1, 1, 1, '343', 'dr'),
-(2, 2, 2, '5677', 'drdr'),
-(3, 3, 3, '1489679', 'tr'),
-(4, 4, 4, '12345', 'trtr'),
-(5, 5, 5, '5638', 'rt'),
-(6, 6, 6, '97446', 'rtrt'),
-(7, 7, 7, '85553', 'uy'),
-(8, 8, 8, '847635', 'uy'),
-(9, 9, 9, '745578', 'io'),
-(10, 10, 10, '245653', 'io');
+INSERT INTO iot_db.country_has_music (id, country_country_id, music_id, music_albom_id_albom, price, price_curency) VALUES
+(1, 1, 1, 1, '343', 'dr'),
+(2, 2, 2, 2, '5677', 'drdr'),
+(3, 3, 3, 3, '1489679', 'tr'),
+(4, 4, 4, 4, '12345', 'trtr'),
+(5, 5, 5, 5, '5638', 'rt'),
+(6, 6, 6, 6, '97446', 'rtrt'),
+(7, 7, 7, 7, '85553', 'uy'),
+(8, 8, 8, 8, '847635', 'uy'),
+(9, 9, 9, 9, '745578', 'io'),
+(10, 10, 10, 10, '245653', 'io');
 
-INSERT INTO iot_db.janre_has_music (janre_janre_id, music_id, music_albom_id_albom, music_creator_creator_id) VALUES
+INSERT INTO iot_db.janre_has_music (id, janre_janre_id, music_id, music_albom_id_albom, music_creator_creator_id) VALUES
+(1, 1, 1, 1, 1),
+(2, 2, 2, 2, 2),
+(3, 3, 3, 3, 3),
+(4, 4, 4, 4, 4),
+(5, 5, 5, 5, 5),
+(6, 6, 6, 6, 6),
+(7, 7, 7, 7, 7),
+(8, 8, 8, 8, 8),
+(9, 9, 9, 9, 9),
+(10, 10, 10, 10, 10);
+
+INSERT INTO iot_db.downloading_song_has_person_profile (id, downloading_song_id_downloading_song, downloading_song_music_id,
+downloading_song_music_albom_id_albom, person_profile_id_person_profile, person_profile_follower_id_follower,
+person_profile_follower_creator_creator_id) VALUES
+(1, 1, 1, 1, 1, 1, 1),
+(2, 2, 2, 2, 2, 2, 2),
+(3, 3, 3, 3, 3, 3, 3),
+(4, 4, 4, 4, 4, 4, 4),
+(5, 5, 5, 5, 5, 5, 5),
+(6, 6, 6, 6, 6, 6, 6),
+(7, 7, 7, 7, 7, 7, 7),
+(8, 8, 8, 8, 8, 8, 8),
+(9, 9, 9, 9, 9, 9, 9),
+(10, 10, 10, 10, 10, 10, 10);
+
+INSERT INTO iot_db.follower_has_creator (id, follower_id_follower, follower_creator_creator_id, creator_creator_id) VALUES
 (1, 1, 1, 1),
 (2, 2, 2, 2),
 (3, 3, 3, 3),
@@ -130,40 +156,14 @@ INSERT INTO iot_db.janre_has_music (janre_janre_id, music_id, music_albom_id_alb
 (9, 9, 9, 9),
 (10, 10, 10, 10);
 
-INSERT INTO iot_db.downloading_song_has_person_profile (downloading_song_id_downloading_song, downloading_song_music_id,
-downloading_song_music_albom_id_albom, person_profile_id_person_profile, person_profile_follower_id_follower,
-person_profile_follower_creator_creator_id) VALUES
-(1, 1, 1, 1, 1, 1),
-(2, 2, 2, 2, 2, 2),
-(3, 3, 3, 3, 3, 3),
-(4, 4, 4, 4, 4, 4),
-(5, 5, 5, 5, 5, 5),
-(6, 6, 6, 6, 6, 6),
-(7, 7, 7, 7, 7, 7),
-(8, 8, 8, 8, 8, 8),
-(9, 9, 9, 9, 9, 9),
-(10, 10, 10, 10, 10, 10);
-
-INSERT INTO iot_db.follower_has_creator (follower_id_follower, follower_creator_creator_id, creator_creator_id) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5),
-(6, 6, 6),
-(7, 7, 7),
-(8, 8, 8),
-(9, 9, 9),
-(10, 10, 10);
-
-INSERT INTO iot_db.creator_has_music_labels (creator_creator_id, music_labels_id_music_labels, music_labels_creator_creator_id) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5),
-(6, 6, 6),
-(7, 7, 7),
-(8, 8, 8),
-(9, 9, 9),
-(10, 10, 10);
+INSERT INTO iot_db.creator_has_music_labels (id, creator_creator_id, music_labels_id_music_labels, music_labels_creator_creator_id) VALUES
+(1, 1, 1, 1),
+(2, 2, 2, 2),
+(3, 3, 3, 3),
+(4, 4, 4, 4),
+(5, 5, 5, 5),
+(6, 6, 6, 6),
+(7, 7, 7, 7),
+(8, 8, 8, 8),
+(9, 9, 9, 9),
+(10, 10, 10, 10);

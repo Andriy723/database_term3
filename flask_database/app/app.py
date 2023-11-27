@@ -1,6 +1,6 @@
 import os
-import yaml
 from waitress import serve
+import yaml
 from flask_database.app.lab4_db import create_app
 
 DEVELOPMENT_PORT = 5000

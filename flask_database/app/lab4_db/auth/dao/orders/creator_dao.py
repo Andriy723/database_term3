@@ -3,5 +3,4 @@ from flask_database.app.lab4_db.auth.domain import Creator
 
 
 class CreatorDAO(GeneralDAO):
-
     _domain_type = Creator
