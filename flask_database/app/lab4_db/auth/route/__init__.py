@@ -33,4 +33,6 @@ def register_routes(app: Flask) -> None:
     app.register_blueprint(music_labels_bp)
     from .orders.person_profile_route import person_profile_bp
     app.register_blueprint(person_profile_bp)
+    from .orders.playlist_route import playlist_bp
+    app.register_blueprint(playlist_bp)
     

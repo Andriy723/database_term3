@@ -12,6 +12,7 @@ from .orders.janre_has_music_controller import JanreHasMusicController
 from .orders.music_controller import MusicController
 from .orders.music_labels_controller import MusicLabelsController
 from .orders.person_profile_controller import PersonProfileController
+from .orders.playlist_controller import PlaylistController
 
 albom_controller = AlbomController()
 country_controller = CountryController()
@@ -19,7 +20,7 @@ country_has_music_controller = CountryHasMusicController()
 creator_controller = CreatorController()
 creator_has_music_labels_controller = CreatorHasMusicLabelsController()
 downloading_song_controller = DownloadingSongController()
-downloading_song_has_person_profile_controller = DownloadingSongController()
+downloading_song_has_person_profile_controller = DownloadingSongHasPersonProfileController()
 follower_controller = FollowerController()
 follower_has_creator_controller = FollowerHasCreatorController()
 janre_controller = JanreController()
@@ -27,3 +28,4 @@ janre_has_music_controller = JanreHasMusicController()
 music_controller = MusicController()
 music_labels_controller = MusicLabelsController()
 person_profile_controller = PersonProfileController()
+playlist_controller = PlaylistController()

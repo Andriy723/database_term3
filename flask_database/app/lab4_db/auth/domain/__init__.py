@@ -12,3 +12,4 @@ from .orders.janre_has_music import JanreHasMusic
 from .orders.music import Music
 from .orders.music_labels import MusicLabels
 from .orders.person_profile import PersonProfile
+from .orders.playlist import Playlist

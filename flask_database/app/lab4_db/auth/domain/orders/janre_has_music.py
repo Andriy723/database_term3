@@ -13,14 +13,6 @@ class JanreHasMusic(db.Model, IDto):
     music_albom_id_albom = db.Column(db.Integer, db.ForeignKey('music.albom_id_albom'))
     music_creator_creator_id = db.Column(db.Integer, db.ForeignKey('music.creator_creator_id'))
 
-    janre = db.relationship("Janre", backref="janre_has_music")
-    music = db.relationship("Music", backref="janre_has_music")
-    janre = db.relationship('Janre', foreign_keys=[janre_janre_id])
-    music = db.relationship('Music', foreign_keys=[music_id])
-    music = db.relationship('Music', foreign_keys=[music_albom_id_albom])
-    music = db.relationship('Music', foreign_keys=[music_creator_creator_id])
-
-
     def __repr__(self) -> str:
         return f"JanreHasMusic(id={self.id}, " \
                f"janre_janre_id={self.janre_janre_id}, music_id={self.music_id}, " \
@@ -34,8 +26,8 @@ class JanreHasMusic(db.Model, IDto):
             "id": self.id,
             "janre_janre_id": janre_controller.find_by_id(self.janre_janre_id),
             "music_id": music_controller.find_by_id(self.music_id),
-            "music_albom_id_albom": music_controller.find_by_id(self.music_albom_id_albom),
-            "music_creator_creator_id":music_controller.find_by_id(self.music_creator_creator_id),
+            # "music_albom_id_albom": music_controller.find_by_id(self.music_albom_id_albom),
+            # "music_creator_creator_id":music_controller.find_by_id(self.music_creator_creator_id),
         }
 
     @staticmethod

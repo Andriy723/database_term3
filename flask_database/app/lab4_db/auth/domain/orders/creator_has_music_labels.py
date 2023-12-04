@@ -12,12 +12,6 @@ class CreatorHasMusicLabels(db.Model, IDto):
     music_labels_id_music_labels = db.Column(db.Integer, db.ForeignKey('music_labels.id_music_labels'))
     music_labels_creator_creator_id = db.Column(db.Integer, db.ForeignKey('music_labels.creator_creator_id'))
 
-    creator = db.relationship("Creator", backref="creator_has_music_labels")
-    music_labels = db.relationship("MusicLabels", backref="creator_has_music_labels")
-    creator = db.relationship('Creator', foreign_keys=[creator_creator_id])
-    music_labels = db.relationship('MusicLabels', foreign_keys=[music_labels_id_music_labels])
-    music_labels = db.relationship('MusicLabels', foreign_keys=[music_labels_creator_creator_id])
-
     def __repr__(self) -> str:
         return f"CreatorHasMusicLabels(id={self.id}, " \
                f"creator_creator_id={self.creator_creator_id}, " \
@@ -31,7 +25,8 @@ class CreatorHasMusicLabels(db.Model, IDto):
             "id": self.id,
             "creator_creator_id": creator_controller.find_by_id(self.creator_creator_id),
             "music_labels_id_music_labels": music_labels_controller.find_by_id(self.music_labels_id_music_labels),
-            "music_labels_creator_creator_id": music_labels_controller.find_by_id(self.music_labels_creator_creator_id),
+            # "music_labels_creator_creator_id":
+            # music_labels_controller.find_by_id(self.music_labels_creator_creator_id),
         }
 
     @staticmethod

@@ -43,3 +43,15 @@ def patch_country(country_id: int) -> Response:
 def delete_country(country_id: int) -> Response:
     country_controller.delete(country_id)
     return make_response("Country deleted", HTTPStatus.OK)
+
+
+@country_bp.post('/insert-into-country/<string:city>/<string:current_place>')
+def insert_into_country(city, current_place):
+    country_controller.insert_into_country_parameters(city, current_place)
+    return make_response("Country created", HTTPStatus.OK)
+
+
+@country_bp.post('/insert-strings-country/<string:city>/<string:current_place>')
+def insert_strings_country(city, current_place):
+    country_controller.insert_strings_country_parameters(city, current_place)
+    return make_response("Strings countries created", HTTPStatus.OK)

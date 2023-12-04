@@ -13,9 +13,6 @@ class Music(db.Model, IDto):
     albom_id_albom = db.Column(db.Integer, db.ForeignKey('albom.id_albom'))
     creator_creator_id = db.Column(db.Integer, db.ForeignKey('creator.creator_id'))
 
-    albom = db.relationship("Albom", backref="music")
-    creator = db.relationship("Creator", backref="music")
-
     def __repr__(self) -> str:
         return f"Music(id={self.id}, duration={self.duration}, name={self.name}, " \
                f"albom_id_albom={self.albom_id_albom}, creator_creator_id={self.creator_creator_id})"
@@ -27,8 +24,8 @@ class Music(db.Model, IDto):
             "id": self.id,
             "duration": self.duration,
             "name": self.name,
-            "albom_id_albom": albom_controller.find_by_id(self.albom_id_albom),
-            "creator_creator_id": creator_controller.find_by_id(self.creator_creator_id),
+            # "albom_id_albom": albom_controller.find_by_id(self.albom_id_albom),
+            # "creator_creator_id": creator_controller.find_by_id(self.creator_creator_id),
         }
 
     @staticmethod

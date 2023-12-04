@@ -14,12 +14,6 @@ class CountryHasMusic(db.Model, IDto):
     price = db.Column(db.String(20), nullable=True)
     price_curency = db.Column(db.String(20), nullable=True)
 
-    country = db.relationship("Country", backref="country_has_music")
-    music = db.relationship("Music", backref="country_has_music")
-    country = db.relationship('Country', foreign_keys=[country_country_id])
-    music = db.relationship('Music', foreign_keys=[music_id])
-    music = db.relationship('Music', foreign_keys=[music_albom_id_albom])
-
     def __repr__(self) -> str:
         return f"CountryHasMusic(id={self.id}, music_id={self.music_id}, " \
                f"country_country_id={self.country_country_id}, " \
@@ -33,7 +27,7 @@ class CountryHasMusic(db.Model, IDto):
             "id": self.id,
             "country_country_id": country_controller.find_by_id(self.country_country_id),
             "music_id": music_controller.find_by_id(self.music_id),
-            "music_albom_id_albom": music_controller.find_by_id(self.music_albom_id_albom),
+            # "music_albom_id_albom": music_controller.find_by_id(self.music_albom_id_albom),
             "price": self.price,
             "price_curency": self.price_curency,
         }

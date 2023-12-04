@@ -12,12 +12,6 @@ class FollowerHasCreator(db.Model, IDto):
     follower_creator_creator_id = db.Column(db.Integer, db.ForeignKey('follower.creator_creator_id'))
     creator_creator_id = db.Column(db.Integer, db.ForeignKey('creator.creator_id'))
 
-    follower = db.relationship("Follower", backref="follower_has_creator")
-    creator = db.relationship("Creator", backref="follower_has_creator")
-    follower = db.relationship('Follower', foreign_keys=[follower_id_follower])
-    follower = db.relationship('Follower', foreign_keys=[follower_creator_creator_id])
-    creator = db.relationship('Creator', foreign_keys=[creator_creator_id])
-
     def __repr__(self) -> str:
         return f"FollowerHasCreator(id={self.id}, " \
                f"follower_id_follower={self.follower_id_follower}, " \
@@ -30,7 +24,7 @@ class FollowerHasCreator(db.Model, IDto):
         return {
             "id": self.id,
             "follower_id_follower": follower_controller.find_by_id(self.follower_id_follower),
-            "follower_creator_creator_id": follower_controller.find_by_id(self.follower_creator_creator_id),
+            # "follower_creator_creator_id": follower_controller.find_by_id(self.follower_creator_creator_id),
             "creator_creator_id": creator_controller.find_by_id(self.creator_creator_id),
         }
 

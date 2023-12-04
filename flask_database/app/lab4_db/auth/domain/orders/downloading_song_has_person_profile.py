@@ -21,15 +21,6 @@ class DownloadingSongHasPersonProfile(db.Model, IDto):
     person_profile_follower_creator_creator_id = db.Column(
         db.Integer, db.ForeignKey('person_profile.follower_creator_creator_id'))
 
-    downloading_song = db.relationship("DownloadingSong", backref="downloading_song_has_person_profile")
-    person_profile = db.relationship("PersonProfile", backref="downloading_song_has_person_profile")
-    downloading_song = db.relationship('DownloadingSong', foreign_keys=[downloading_song_id_downloading_song])
-    downloading_song = db.relationship('DownloadingSong', foreign_keys=[downloading_song_music_id])
-    downloading_song = db.relationship('DownloadingSong', foreign_keys=[downloading_song_music_albom_id_albom])
-    person_profile = db.relationship('PersonProfile', foreign_keys=[person_profile_id_person_profile])
-    person_profile = db.relationship('PersonProfile', foreign_keys=[person_profile_follower_id_follower])
-    person_profile = db.relationship('PersonProfile', foreign_keys=[person_profile_follower_creator_creator_id])
-
     def __repr__(self) -> str:
         return f"DownloadingSongHasPersonProfile(id=" \
                f"{self.id}, " \
@@ -48,16 +39,16 @@ class DownloadingSongHasPersonProfile(db.Model, IDto):
             "id": self.id,
             "downloading_song_id_downloading_song": downloading_song_controller.find_by_id(
                 self.downloading_song_id_downloading_song),
-            "downloading_song_music_id": downloading_song_controller.find_by_id(
-                self.downloading_song_music_id),
-            "downloading_song_music_albom_id_albom": downloading_song_controller.find_by_id(
-                self.downloading_song_music_albom_id_albom),
+            # "downloading_song_music_id": downloading_song_controller.find_by_id(
+            #     self.downloading_song_music_id),
+            # "downloading_song_music_albom_id_albom": downloading_song_controller.find_by_id(
+            #     self.downloading_song_music_albom_id_albom),
             "person_profile_id_person_profile": person_profile_controller.find_by_id(
                 self.person_profile_id_person_profile),
-            "person_profile_follower_id_follower": person_profile_controller.find_by_id(
-                self.person_profile_follower_id_follower),
-            "person_profile_follower_creator_creator_id": person_profile_controller.find_by_id(
-                self.person_profile_follower_creator_creator_id),
+            # "person_profile_follower_id_follower": person_profile_controller.find_by_id(
+            #     self.person_profile_follower_id_follower),
+            # "person_profile_follower_creator_creator_id": person_profile_controller.find_by_id(
+            #     self.person_profile_follower_creator_creator_id),
         }
 
     @staticmethod

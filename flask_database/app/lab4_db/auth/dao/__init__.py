@@ -12,6 +12,7 @@ from .orders.janre_has_music_dao import JanreHasMusicDAO
 from .orders.music_dao import MusicDAO
 from .orders.music_labels_dao import MusicLabelsDAO
 from .orders.person_profile_dao import PersonProfileDAO
+from .orders.playlist_dao import PlaylistDAO
 
 albom_dao = AlbomDAO()
 country_dao = CountryDAO()
@@ -27,3 +28,4 @@ janre_has_music_dao = JanreHasMusicDAO()
 music_dao = MusicDAO()
 music_labels_dao = MusicLabelsDAO()
 person_profile_dao = PersonProfileDAO()
+playlist_dao = PlaylistDAO()

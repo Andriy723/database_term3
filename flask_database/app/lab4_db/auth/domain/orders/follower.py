@@ -11,18 +11,16 @@ class Follower(db.Model, IDto):
     followers_num = db.Column(db.Integer, nullable=True)
     creator_creator_id = db.Column(db.Integer, db.ForeignKey('creator.creator_id'), nullable=False)
 
-    creator = db.relationship("Creator", backref="follower")
-
     def __repr__(self) -> str:
         return f"Follower(id_follower={self.id_follower}, followers_num={self.followers_num}, " \
                f"creator_creator_id={self.creator_creator_id})"
 
     def put_into_dto(self) -> Dict[str, Any]:
-        from flask_database.app.lab4_db.auth.controller import creator_controller
+        # from flask_database.app.lab4_db.auth.controller import creator_controller
         return {
             "id_follower": self.id_follower,
             "followers_num": self.followers_num,
-            "creator_creator_id": creator_controller.find_by_id(self.creator_creator_id),
+            # "creator_creator_id": creator_controller.find_by_id(self.creator_creator_id),
         }
 
     @staticmethod

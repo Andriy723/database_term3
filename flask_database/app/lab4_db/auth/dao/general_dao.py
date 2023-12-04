@@ -61,3 +61,7 @@ class GeneralDAO(ABC):
 
         self._session.query(self._domain_type).delete()
         self._session.commit()
+
+    def find_objects_with_value(self, column_name, desired_value):
+        return self._session.query(self._domain_type).filter(
+            getattr(self._domain_type, column_name) == desired_value).all()

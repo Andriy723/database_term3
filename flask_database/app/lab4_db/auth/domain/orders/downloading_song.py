@@ -12,10 +12,6 @@ class DownloadingSong(db.Model, IDto):
     music_id = db.Column(db.Integer, db.ForeignKey('music.id'))
     music_albom_id_albom = db.Column(db.Integer, db.ForeignKey('music.albom_id_albom'))
 
-    music = db.relationship("Music", backref="downloading_song")
-    music = db.relationship('Music', foreign_keys=[music_id])
-    music = db.relationship('Music', foreign_keys=[music_albom_id_albom])
-
     def __repr__(self) -> str:
         return f"DownloadingSong(id_downloading_song={self.id_downloading_song}, " \
                f"downloading_num={self.downloading_num}, " \
@@ -28,7 +24,7 @@ class DownloadingSong(db.Model, IDto):
             "id_downloading_song": self.id_downloading_song,
             "downloading_num": self.downloading_num,
             "music_id": music_controller.find_by_id(self.music_id),
-            "music_albom_id_albom": music_controller.find_by_id(self.music_albom_id_albom),
+            # "music_albom_id_albom": music_controller.find_by_id(self.music_albom_id_albom),
         }
 
     @staticmethod

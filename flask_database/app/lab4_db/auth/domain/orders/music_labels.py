@@ -11,8 +11,6 @@ class MusicLabels(db.Model, IDto):
     label_name = db.Column(db.String(25), nullable=False)
     creator_creator_id = db.Column(db.Integer, db.ForeignKey('creator.creator_id'), nullable=False)
 
-    creator = db.relationship("Creator", backref="music_labels")
-
     def __repr__(self) -> str:
         return f"MusicLabels(id_music_labels={self.id_music_labels}, label_name={self.label_name}, " \
                f"creator_creator_id={self.creator_creator_id})"
@@ -22,7 +20,7 @@ class MusicLabels(db.Model, IDto):
         return {
             "id_music_labels": self.id_music_labels,
             "label_name": self.label_name,
-            "creator_creator_id": creator_controller.find_by_id(self.creator_creator_id),
+            # "creator_creator_id": creator_controller.find_by_id(self.creator_creator_id),
         }
 
     @staticmethod
