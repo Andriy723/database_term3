@@ -43,3 +43,12 @@ def patch_country(country_has_music_id: int) -> Response:
 def delete_albom(country_has_music_id: int) -> Response:
     country_has_music_controller.delete(country_has_music_id)
     return make_response("Country_has_music deleted", HTTPStatus.OK)
+
+
+@country_has_music_bp.post('/insert-country-has-music/<string:id_country>/<string:id_music>')
+def insert_country_has_music(id_country, id_music):
+    country_has_music_controller.insert_into_country_has_music(id_country, id_music)
+    if id_country == id_music:
+        return make_response("Country has music created", HTTPStatus.OK)
+    else:
+        return make_response("Something is wrong", HTTPStatus.BAD_REQUEST)

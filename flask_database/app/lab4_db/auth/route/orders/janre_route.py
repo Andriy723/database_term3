@@ -43,3 +43,9 @@ def patch_janre(janre_id: int) -> Response:
 def delete_janre(janre_id: int) -> Response:
     janre_controller.delete(janre_id)
     return make_response("Janre deleted", HTTPStatus.OK)
+
+
+@janre_bp.post('/create-db-name-janre')
+def create_dbs():
+    janre_controller.create_db_name_janre()
+    return make_response("Databases was created", HTTPStatus.OK)

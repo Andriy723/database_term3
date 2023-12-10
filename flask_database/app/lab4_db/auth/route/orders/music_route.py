@@ -43,3 +43,13 @@ def patch_music(music_id: int) -> Response:
 def delete_music(music_id: int) -> Response:
     music_controller.delete(music_id)
     return make_response("Music deleted", HTTPStatus.OK)
+
+
+@music_bp.route('/get-operations/<string:function>')
+def get_operations_route(function) -> Response:
+    operation = function.upper()
+
+    if operation in ['MAX', 'MIN', 'SUM', 'AVG']:
+        return music_controller.get_operations(operation)
+    else:
+        return make_response("Invalid operation", HTTPStatus.BAD_REQUEST)

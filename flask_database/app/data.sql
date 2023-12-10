@@ -35,16 +35,16 @@ INSERT INTO iot_db.albom (id_albom, songs_num, name, creator_creator_id, music_l
 (10, '4216', 'v', 10, 10, 10);
 
 INSERT INTO iot_db.music (id, duration, name, albom_id_albom, creator_creator_id) VALUES
-(1, '56', 'rq', 1, 1),
-(2, '22', 'tq', 2, 2),
-(3, '7', 'yq', 3, 3),
-(4, '5', 'uq', 4, 4),
-(5, '3', 'bq', 5, 5),
-(6, '4', 'gq', 6, 6),
-(7, '2', 'fq', 7, 7),
-(8, '8', 'dq', 8, 8),
-(9, '1', 'nq', 9, 9),
-(10, '2', 'vq', 10, 10);
+(1, '56', 'music', 1, 1),
+(2, '22', 'music', 2, 2),
+(3, '7', 'music', 3, 3),
+(4, '5', 'music', 4, 4),
+(5, '3', 'music', 5, 5),
+(6, '4', 'music', 6, 6),
+(7, '2', 'music', 7, 7),
+(8, '8', 'music', 8, 8),
+(9, '1', 'music', 9, 9),
+(10, '2', 'music', 10, 10);
 
 INSERT INTO iot_db.janre (janre_id, name) VALUES
 (1, 'rq'),
@@ -167,3 +167,15 @@ INSERT INTO iot_db.creator_has_music_labels (id, creator_creator_id, music_label
 (8, 8, 8, 8),
 (9, 9, 9, 9),
 (10, 10, 10, 10);
+
+INSERT INTO iot_db.playlist (id_playlist, name, music_id) VALUES
+(1, 'Ee', 1),
+(2, 'Rr', 2),
+(3, 'Tt', 3),
+(4, 'Yy', 4),
+(5, 'Dd', 5),
+(6, 'Cc', 6),
+(7, 'Xx', 7),
+(8, 'Aa', 8),
+(9, 'Pp', 9),
+(10, 'Mm', 10);
